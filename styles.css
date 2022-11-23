@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --main-blanco: white;
+    --main-negro: black;
+    --main-azul: rgb(64, 155, 216);
+    --main-gris: rgb(158, 174, 196);
+}
+
+.header{
+    position: relative;
+    background-color: var(--main-azul);
+    height: 130px;
+    box-shadow: 0 0 20px -10px var(--main-negro);
+}
+
+.header a{
+    display: inline-block;
+    color: var(--main-blanco);
+    text-decoration: none;
+}
+
+.header__head{
+    padding-top: 20px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.header__head a, .header__head h1{
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+}
+
+.header__nav1{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    align-items: center;
+}
+
+.header__nav1 a{
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-bottom: solid var(--main-blanco) 3px;
+    padding-bottom: 3px;
+    margin: 0 15px;
+}
+
+.header__nav2{
+    display: none;
+}
+
+.header__nav2 ol{
+    list-style: none;
+}
+
+.header__nav2-desp{
+    display: none;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    right: 0px;
+    background-color: var(--main-blanco);
+}
+
+.header__nav2-desp a{
+    display: block;
+    line-height: 60px;
+    font-weight: bold;
+    color: var(--main-negro);
+    text-align: center;
+}
+
+.header__nav2-desp li{
+    box-shadow: inset 0 2px 7px -5px var(--main-negro);
+    width: 100%;
+}
+
+.header__nav2:hover .header__nav2-desp{
+    display: block;
+}
+
+
+.header__nav1 a:hover{
+    translate: 0 -3px;
+    border-bottom: ridge var(--main-gris) 5px;
+    transition: 0.09s linear;
+}
+
+.article__header{
+    padding:7vw;
+    display: flex;
+    align-items: center;
+    height: 450px;
+    background-image: url(img/bacola.webp);
+    background-size: 100vw;
+    font-weight: 900;
+    font-size: 25px;
+    font-family: sans-serif;
+    box-shadow: inset 0 -10px 20px -15px var(--main-negro); 
+}
+
+.article__header img{
+    max-height: 280px;
+}
+
+.article__section{
+    display: flex;
+    justify-content: center;
+}
+
+.procesos, .productos, .sucursales, .contacto{
+    width: 590px;
+    margin: 50px 0;
+    font-size: 18px;
+}
+
+h2{
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.procesos img{
+    width: 500px;
+}
+
+.procesos p{
+    padding: 10px 0;
+}
+
+.article__hr{
+    padding: 0 25vw;
+}
+
+.prodList{
+    margin-top: 20px;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 15px;
+}
+
+.prodList img{
+    margin: 15px 0;
+    width: calc(100% - 10px);
+    max-height: 200px;
+    object-fit: scale-down;
+}
+
+.prodList div{
+    display: grid;
+    grid-template: 10fr repeat(3, 1fr) / 1fr;
+    align-items: center;
+    justify-items: center;
+    box-shadow: 0 0 10px -5px var(--main-negro);
+}
+
+.prodList p{
+    margin: 0 10px;
+}
+
+.sucursales p{
+    text-align: center;
+}
+
+.footer{
+    background-color: var(--main-azul);
+    height: 30px;
+}
+
+@media screen and (max-width: 287px) {
+    .article__header img{
+        width: 100%;
+    }
+
+    .prodList{
+        grid-template: repeat(4, 1fr) / 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header__nav1{
+        display: none;
+    }
+
+    .header__nav2{
+        display: flex;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .header__nav2 a span{
+        font-size: 30px;
+    }
+
+    .header{
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header__head{
+        padding: 20px 0;
+        height: 70px;
+        justify-content: left;
+        margin: 0 10px;
+    }
+
+    .header__head h1, .header__head a{
+        font-size: 25px;
+    }
+
+    .prodList{
+        grid-template: repeat(4, 1fr) / 1fr;
+        justify-items: center;
+    }
+
+    .prodList div{
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 600px)  {
+    .article__header{
+        flex-flow: column;
+        *background-size: 130vh;
+    }
+
+    .article__header p{
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .procesos, .productos, .contacto, .sucursales{
+        width: 100vw;
+        margin: 50px 25px;
+    }
+
+    .procesos img{
+        margin: 0 15px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .article__header{
+        background-size: auto 100%;
+    }
+}
